@@ -4,8 +4,15 @@ import './card-list.styles.css';
 
 class CardList extends Component {
   render() {
+    const { monsters } = this.props;
     return (
-      <Card monsters={this.props.monsters}/>
+      <div className='card-list'>
+      {monsters.map((monster) => {
+        const { name, id, email } = monster;
+        return (
+          <Card name={name} id={id} email={email} key={id} />
+      )})}
+    </div>
     )
   }
 }

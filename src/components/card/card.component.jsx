@@ -3,19 +3,13 @@ import './card.styles.css';
 
 class Card extends Component {
   render() {
-    const { monsters } = this.props;
+    const { name, id, email } = this.props;
     return (
-      <div className='card-list'>
-      {monsters.map((monster) => {
-        const { name, id, email } = monster;
-        return (
-          <div className='card-container' key={id}>
-            <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set2`} />
-            <h2>{name}</h2>
-            <p>{email}</p>
-          </div>
-      )})}
-    </div>
+      <div className='card-container'>
+        <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set2`} />
+        <h2>{name}</h2>
+        <p>{email}</p>
+      </div>
     )
   }
 }
